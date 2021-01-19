@@ -1,0 +1,20 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "username": "postgres",
+  "password": "postgres",
+  "database": "typescript_express",
+  "synchronize": true,
+  "logging": false,
+  "entities": [
+     "src/database/models/**/*.ts"
+  ],
+  "migrations": [
+     "src/database/migration/**/*.ts"
+  ],
+  "cli": {
+    "migrationsDir": "src/database/migration",
+    "entitiesDir": "sec/database/models"
+}
+}
