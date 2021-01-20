@@ -13,11 +13,11 @@ export class Todos extends BaseEntity {
   @Column()
   description: string
 
-  @Column()
+  @Column({ default: false })
   status: boolean;
 
   @Column()
-  user_id: number;
+  userId: number;
 
   @Column()
   created_at: Date

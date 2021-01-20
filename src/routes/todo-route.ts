@@ -1,7 +1,8 @@
 import { Router } from 'express';
 
 /** User controllers */
-import { UserController } from '../controllers';
+import { TodoController } from '../controllers';
+import authentication from '../middlewares/auth';
 
 const router = Router();
 
@@ -14,10 +15,11 @@ const router = Router();
  * PATCH: /:id
  */
 
-router.post(`/`, UserController.CreateUser);
-router.get(`/`, UserController.GetUsers);
-router.get(`/:id`, UserController.GetUser);
-router.delete(`/:id`, UserController.DeleteUser);
-router.patch(`/:id`, UserController.EditUser);
+router.post(`/`, authentication, TodoController.CreateTodo);
+router.get(`/`, authentication, TodoController.GetTodos);
+router.get(`/:id`, authentication, TodoController.GetTodo);
+router.delete(`/:id`, authentication, TodoController.DeleteTodo);
+router.patch(`/:id`, authentication, TodoController.EditTodo);
+router.patch(`/status_change/:id`, authentication, TodoController.UpdateStatus);
 
 export default router;

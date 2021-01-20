@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction, request } from 'express';
+import { Request, Response, NextFunction } from 'express';
 
 export default (err: any, req: Request, res: Response, next: NextFunction) => {
   console.log(`ERROR HANDLED\n`, err)
