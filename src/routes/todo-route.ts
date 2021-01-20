@@ -6,9 +6,9 @@ import { UserController } from '../controllers';
 const router = Router();
 
 /**
- * Endpoint: /user
- * POST : create a new user
- * GET  : get all users
+ * Endpoint: /todo
+ * POST : create a new todo
+ * GET  : get all todos
  * GET  : /:id
  * DEL  : /:id
  * PATCH: /:id

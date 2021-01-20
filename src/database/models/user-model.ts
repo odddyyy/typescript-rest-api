@@ -1,5 +1,6 @@
-import { BaseEntity, Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
+import { BaseEntity, Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm'
 
+import { Todos } from './todo-model';
 @Entity()
 export class Users extends BaseEntity {
   @PrimaryGeneratedColumn()
@@ -16,4 +17,7 @@ export class Users extends BaseEntity {
 
   @Column()
   registered_date: Date
+
+  @OneToMany(() => Todos, todo => todo.user)
+  todo: Todos[];
 }
